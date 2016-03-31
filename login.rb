@@ -56,7 +56,7 @@ class Loginsession
 		@entered_password = gets.chomp
 
 
-		if users.username.include? @entered_username && user.password.include? @entered_password
+		if @usersdatabase.username.include? @entered_username && @usersdatabase.password.include? @entered_password
 			puts "Hi #{@entered_username}! You have successfully logged in."
 			self.verification
 		else
