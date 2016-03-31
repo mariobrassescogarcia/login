@@ -45,7 +45,8 @@ usersdatabase = Userdatabase.new(users)
 
 class Loginsession 
 	attr_reader :verification_status
-	def initialize 
+	def initialize (usersdatabase)
+		@usersdatabase = usersdatabase
 	end
 
 	def check_login
@@ -94,8 +95,7 @@ user_option = gets.chomp
 
 
 	if user_option.downcase == "login"
-		mario = User.new("Mario", "0007")
-		newloginsession = Loginsession.new
+		newloginsession = Loginsession.new(usersdatabase)
 		newloginsession.check_login
 	elsif user_option.downcase == "signup"
 		puts "Select username"
