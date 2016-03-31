@@ -50,20 +50,25 @@ class Loginsession
 	end
 
 	def check_login
+		login_status = true
 		puts "Enter username"
 		@entered_username = gets.chomp
 		puts "Enter password"
 		@entered_password = gets.chomp
 			@usersdatabase.users.each do |user|
 
-			if user.username.include?(@entered_username) && user.password.include?(@entered_password)
-				puts "Hi #{@entered_username}! You have successfully logged in."
-				self.verification
-			else
-				self.close_session
-			end
-		end
+				if user.username.include?(@entered_username) && user.password.include?(@entered_password)
+					puts "Hi #{@entered_username}! You have successfully logged in."
+					self.verification
+				else
+					login_status = false
+					break
 
+				end
+			end
+		if login_status === false
+			self.close_session
+		end
 	end
 
 	def close_session
