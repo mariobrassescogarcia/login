@@ -54,12 +54,14 @@ class Loginsession
 		@entered_username = gets.chomp
 		puts "Enter password"
 		@entered_password = gets.chomp
+			@userdatabase.each do |user|
 
-		if @usersdatabase.users.username.include?(@entered_username) && @usersdatabase.users.password.include?(@entered_password)
-			puts "Hi #{@entered_username}! You have successfully logged in."
-			self.verification
-		else
-			puts "Uncorrect credentials"
+			if user.username.include?(@entered_username) && user.password.include?(@entered_password)
+				puts "Hi #{@entered_username}! You have successfully logged in."
+				self.verification
+			else
+				puts "Uncorrect credentials"
+			end
 		end
 
 	end
