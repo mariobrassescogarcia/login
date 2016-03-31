@@ -4,6 +4,9 @@ require "pry"
 #----------------------------ELEGANT WAY--------------------------
 
 
+
+#User class. Will contain credential
+
 class User
 	attr_accessor :username, :password
 	def initialize (username, password) 
@@ -11,6 +14,20 @@ class User
 		@password = password
 	end
 end
+
+
+user1 = User.new("Mike", "782941")
+user2 = User.new("Bob", "9741247")
+user2 = User.new("Loon", "4362")
+user3 = User.new("Bab", "123")
+user4 = User.new("Marc", "345")
+user5 = User.new("Janh", "234")
+user6 = User.new("Bob", "456")
+
+#Univers of users 
+
+users = [user1, user2, user3, user4, user5, user6]
+
 
 
 class Loginsesion 
