@@ -29,8 +29,9 @@ user6 = User.new("Bob", "456")
 users = [user1, user2, user3, user4, user5, user6]
 
 
+#Loginsession, to verify if you exist as a user and if you are a bot
 
-class Loginsesion 
+class Loginsession 
 	attr_reader :verification_status
 	def initialize (user) 
 		@user = user
@@ -90,7 +91,7 @@ user_option = gets.chomp
 		username = gets.chomp
 		puts "Select password"
 		password = gets.chomp
-		User.new(username, password)
+		users.push(User.new(username, password))
 	else
 
 		session = false
