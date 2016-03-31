@@ -33,8 +33,7 @@ users = [user1, user2, user3, user4, user5, user6]
 
 class Loginsession 
 	attr_reader :verification_status
-	def initialize  
-		@user = user
+	def initialize 
 	end
 
 	def check_login
@@ -44,8 +43,8 @@ class Loginsession
 		@entered_password = gets.chomp
 
 
-		if @entered_username == @user.username && @entered_password == @user.password
-			puts "Hi #{@user.username}! You have successfully logged in."
+		if users.username.include? @entered_username && user.password.include? @entered_password
+			puts "Hi #{@entered_username}! You have successfully logged in."
 			self.verification
 		else
 			puts "Uncorrect credentials"
