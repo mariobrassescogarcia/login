@@ -29,6 +29,18 @@ user6 = User.new("Bob", "456")
 users = [user1, user2, user3, user4, user5, user6]
 
 
+class Userdatabase
+	attr_reader :users
+	def initialize (users)
+		@users = users
+	end
+end
+
+usersdatabase = Userdatabase.new(users)
+
+
+
+
 #Loginsession, to verify if you exist as a user and if you are a bot
 
 class Loginsession 
