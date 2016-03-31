@@ -60,11 +60,16 @@ class Loginsession
 				puts "Hi #{@entered_username}! You have successfully logged in."
 				self.verification
 			else
-				puts "Uncorrect credentials"
+				self.close_session
 			end
 		end
 
 	end
+
+	def close_session
+		puts "Uncorrect credentials"
+	end
+
 
 	def verification
 		puts "Verify that you are a human by entering 5 words:"
