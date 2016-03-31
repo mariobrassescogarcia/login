@@ -55,8 +55,7 @@ class Loginsession
 		puts "Enter password"
 		@entered_password = gets.chomp
 
-
-		if @usersdatabase.username.include? @entered_username && @usersdatabase.password.include? @entered_password
+		if @usersdatabase.username.include?(@entered_username) && @usersdatabase.password.include?(@entered_password)
 			puts "Hi #{@entered_username}! You have successfully logged in."
 			self.verification
 		else
@@ -71,7 +70,8 @@ class Loginsession
 			if @entered_text.split(" ").length == 5
 				puts "Correct"
 				@verification_status = true
-			else puts "Number of words incorrect."
+			else 
+				puts "Number of words incorrect."
 				@verification_status = false
 			end
 
