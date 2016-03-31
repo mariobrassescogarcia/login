@@ -33,7 +33,7 @@ users = [user1, user2, user3, user4, user5, user6]
 
 class Loginsession 
 	attr_reader :verification_status
-	def initialize (user) 
+	def initialize  
 		@user = user
 	end
 
@@ -84,8 +84,8 @@ user_option = gets.chomp
 
 	if user_option.downcase == "login"
 		mario = User.new("Mario", "0007")
-		loginsession1 = Loginsesion.new(mario)
-		loginsession1.check_login
+		newloginsession = Loginsession.new
+		newloginsession.check_login
 	elsif user_option.downcase == "signup"
 		puts "Select username"
 		username = gets.chomp
