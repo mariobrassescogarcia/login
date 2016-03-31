@@ -54,7 +54,7 @@ class Loginsession
 		@entered_username = gets.chomp
 		puts "Enter password"
 		@entered_password = gets.chomp
-			@userdatabase.each do |user|
+			@usersdatabase.each do |user|
 
 			if user.username.include?(@entered_username) && user.password.include?(@entered_password)
 				puts "Hi #{@entered_username}! You have successfully logged in."
